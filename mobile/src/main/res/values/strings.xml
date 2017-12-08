@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DeviceHiveLights</string>
+    <string name="record">Record</string>
+    <string name="stop">stop</string>
+    <string name="blink">Blink</string>
+    <string name="off">Off</string>
+    <string name="random">Random</string>
+    <string name="marry_christmas">Merry Christmas and Happy New Year!</string>
+    <string name="dialog_message">Listening</string>
+    <string name="refresh_token_hint">Refresh Token</string>
+    <string name="server_url_hint">Server Url</string>
+    <string name="text_error">Input field cannot be empty</string>
+    <string name="logging">Logging in</string>
+    <string name="error_title">Something went wrong</string>
+    <string name="ok">ok</string>
+    <string name="deviceId">Device Id</string>
+</resources>

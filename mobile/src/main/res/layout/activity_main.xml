@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.devicehive.lights.view.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_end"
+            android:layout_marginTop="@dimen/margin_end"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_dh_christmas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/margin_end"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="@string/marry_christmas"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/listen_ll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/listen_ll"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/text"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/recordAudio"
+                android:layout_width="@dimen/round_button_size"
+                android:layout_height="@dimen/round_button_size"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/round_button_ripple"
+                android:src="@drawable/ic_mic_white_24dp" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/blink"
+                android:layout_width="@dimen/round_button_size"
+                android:layout_height="@dimen/round_button_size"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_button_ripple"
+                android:src="@drawable/ic_flare_white_24dp" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/random"
+                android:layout_width="@dimen/round_button_size"
+                android:layout_height="@dimen/round_button_size"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/round_button_ripple"
+                android:src="@drawable/ic_color_lens_white_24dp" />
+
+            <Button
+                android:id="@+id/off"
+                android:layout_width="@dimen/round_button_size"
+                android:layout_height="@dimen/round_button_size"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/recordAudio"
+                android:background="@drawable/round_button_ripple"
+                android:text="@string/off"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

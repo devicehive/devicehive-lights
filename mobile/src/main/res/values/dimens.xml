@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="margin_end">16dp</dimen>
+    <dimen name="round_button_radius">26dp</dimen>
+    <dimen name="round_button_size">52dp</dimen>
+</resources>
