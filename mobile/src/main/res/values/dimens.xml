@@ -4,4 +4,5 @@
     <dimen name="margin_end">16dp</dimen>
     <dimen name="round_button_radius">26dp</dimen>
     <dimen name="round_button_size">52dp</dimen>
+    <dimen name="login_logo_size">96dp</dimen>
 </resources>
