@@ -38,6 +38,7 @@ public class LoginPresenter extends AbstractPresenter<ResultView> {
 
 
     public static final String ERROR_MESSAGE = "There are some issues happened. Try again later";
+    private static final String URL_FORMAT = "Incorrect url: %s was provided";
 
     public void login(String url, String token, String deviceId) {
         try {
@@ -81,8 +82,7 @@ public class LoginPresenter extends AbstractPresenter<ResultView> {
         } catch (Error e) {
             e.printStackTrace();
             if (!isViewNull()) {
-                String tokenValue = token.length() > 10 ? token.substring(0, 10) + "..." : token;
-                view.onError("Incorrect input fields url: " + url + " token :" + tokenValue);
+                view.onError(String.format(URL_FORMAT, url));
             }
         }
 
