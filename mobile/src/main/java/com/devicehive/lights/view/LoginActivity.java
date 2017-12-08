@@ -31,7 +31,6 @@ import android.support.design.widget.TextInputLayout;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ImageButton;
 
@@ -41,13 +40,12 @@ import com.devicehive.lights.presenter.base.PresenterFactory;
 import com.devicehive.lights.presenter.base.ResultView;
 import com.devicehive.lights.presenter.impl.LoginPresenter;
 import com.devicehive.lights.tools.PreferencesHelper;
+import com.devicehive.lights.tools.UIUtils;
 
 import dmax.dialog.SpotsDialog;
 
 public class LoginActivity extends BasePresenterActivity<LoginPresenter, ResultView> implements ResultView {
-    public static final String URL = "url";
-    public static final String TOKEN = "token";
-    public static final String DEVICE_ID = "deviceId";
+
     TextInputEditText refreshToken;
     TextInputEditText serverAddress;
     TextInputEditText deviceId;
@@ -94,7 +92,9 @@ public class LoginActivity extends BasePresenterActivity<LoginPresenter, ResultV
         login = findViewById(R.id.login);
 
         login.setOnClickListener(v -> {
+            UIUtils.hideKeyboard(this);
             dialog = new SpotsDialog(this, getString(R.string.logging));
+            dialog.setCancelable(false);
             dialog.show();
             presenter.login(serverAddress.getText().toString(),
                     refreshToken.getText().toString(),
@@ -157,7 +157,7 @@ public class LoginActivity extends BasePresenterActivity<LoginPresenter, ResultV
     }
 
     private void enableLogin() {
-        login.setVisibility(isFieldsEmpty() ? View.INVISIBLE : View.VISIBLE);
+//        login.setVisibility(isFieldsEmpty() ? View.INVISIBLE : View.VISIBLE);
         login.setEnabled(!isFieldsEmpty());
     }
 

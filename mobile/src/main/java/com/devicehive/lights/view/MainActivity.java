@@ -77,6 +77,7 @@ public class MainActivity extends BasePresenterActivity<MainPresenter, MvpView> 
     @NeedsPermission(value = {Manifest.permission.RECORD_AUDIO})
     public void prepareAudio() {
         dialog = new SpotsDialog(this, getString(R.string.dialog_message));
+        dialog.setCancelable(false);
         dialog.show();
         presenter.captureAudio().observeOn(AndroidSchedulers.mainThread()).subscribe(sent -> {
             if (dialog != null) {

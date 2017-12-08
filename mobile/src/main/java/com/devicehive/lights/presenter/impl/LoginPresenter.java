@@ -78,10 +78,11 @@ public class LoginPresenter extends AbstractPresenter<ResultView> {
                         }
                     });
 
-        } catch (Exception e) {
+        } catch (Error e) {
             e.printStackTrace();
             if (!isViewNull()) {
-                view.onError(e.getMessage());
+                String tokenValue = token.length() > 10 ? token.substring(0, 10) + "..." : token;
+                view.onError("Incorrect input fields url: " + url + " token :" + tokenValue);
             }
         }
 
