@@ -56,7 +56,7 @@ public class MainPresenter extends AbstractPresenter<MvpView> {
     private static final String COLORS = "colors";
     private static final String SPEED = "speed";
 
-    private static final String LIGHTS_CHRISTMAS = "CHRISTMAS_TIME";
+    private static final String LIGHTS_AUDIO = "AUDIO";
     private static final String LIGHTS_BLINKER = "BLINK";
     private static final String LIGHTS_RANDOM = "RANDOM";
     private static final String LIGHTS_OFF = "OFF";
@@ -122,7 +122,7 @@ public class MainPresenter extends AbstractPresenter<MvpView> {
                     parameters.add(speedParam);
                     parameters.add(colorParam);
 
-                    DHResponse<DeviceCommand> command = device.sendCommand(LIGHTS_CHRISTMAS, parameters);
+                    DHResponse<DeviceCommand> command = device.sendCommand(LIGHTS_AUDIO, parameters);
 
                     return command.isSuccessful();
                 });

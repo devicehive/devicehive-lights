@@ -56,7 +56,7 @@ public class CommandService {
 
     public static final String DEVICE_ID_FORMAT = "Device Id: %s";
 
-    private static final String LIGHTS_CHRISTMAS = "CHRISTMAS_TIME";
+    private static final String LIGHTS_AUDIO = "AUDIO";
     private static final String LIGHTS_BLINKER = "BLINK";
     private static final String LIGHTS_RANDOM = "RANDOM";
     private static final String LIGHTS_OFF = "OFF";
@@ -102,14 +102,14 @@ public class CommandService {
                 }
                 Device device = deviceDHResponse.getData();
                 CommandFilter commandFilter = new CommandFilter();
-                commandFilter.setCommandNames(LIGHTS_BLINKER, LIGHTS_RANDOM, LIGHTS_CHRISTMAS, LIGHTS_OFF);
+                commandFilter.setCommandNames(LIGHTS_BLINKER, LIGHTS_RANDOM, LIGHTS_AUDIO, LIGHTS_OFF);
 
 
                 device.subscribeCommands(commandFilter, new DeviceCommandsCallback() {
                     @Override
                     public void onSuccess(List<DeviceCommand> list) {
                         DeviceCommand command = list.get(0);
-                        if (Objects.equals(command.getCommandName(), LIGHTS_CHRISTMAS)) {
+                        if (Objects.equals(command.getCommandName(), LIGHTS_AUDIO)) {
                             if (future != null) {
                                 future.cancel(true);
                             }
