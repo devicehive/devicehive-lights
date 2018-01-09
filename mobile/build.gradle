@@ -25,7 +25,7 @@ ext {
     apacheCommons = "3.6.1"
     androidSupport = "26.1.0"
     constraint = "1.0.2"
-    devicehive = "3.0.10"
+    devicehive = "3.1.1"
     permissionDispatcher = "3.0.1"
     rxandroid = "2.0.1"
     rxjava = "2.1.3"
